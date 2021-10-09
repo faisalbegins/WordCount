@@ -11,7 +11,7 @@ class WordCountMapper extends Mapper<Object, Text, Text, IntWritable> {
     private final static IntWritable one = new IntWritable(1);
     private final Text word = new Text();
 
-    public void map(Object lineOffset, Text value, Context context) throws IOException, InterruptedException {
+    public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
         StringTokenizer itr = new StringTokenizer(value.toString());
         while (itr.hasMoreTokens()) {
             String token = itr.nextToken();
